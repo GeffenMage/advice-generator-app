@@ -1,0 +1,142 @@
+:root {
+    --primary-1-clr: hsl(193, 38%, 86%);
+    --accent-clr: hsl(150, 100%, 66%);
+    --gray-blue: hsl(217, 19%, 38%);
+    --dark-gray-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0 1rem;
+    display: grid;
+    place-items: center;
+    background: var(--dark-blue);
+    font-family: 'Manrope';
+}
+
+#loading {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+#loading[data-active='true'] {
+    display: grid;
+    place-items: center;
+}
+
+#loading[data-active='true'] + #content{
+    display: none;
+}
+
+.loader {
+    border: 10px solid var(--dark-blue);
+    border-top: 10px solid var(--accent-clr);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: var(--dark-gray-blue);
+    border-radius: 10px;
+    /*height: 28rem;*/
+    max-width: 40rem;
+    padding: 2rem;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-header {
+    color: var(--accent-clr);
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+}
+
+.card-body {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-height: 7rem;
+}
+
+.card-text {
+    color: var(--primary-1-clr);
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.card-body::after{
+    margin-top: 1rem;
+    display: block;
+    content: url('/images/pattern-divider-mobile.svg');
+}
+
+.card-footer {
+    position: relative;
+    text-align: center;
+}
+
+@media only screen and (min-width: 675px) {
+    .card-body::after {
+        content: url('/images/pattern-divider-desktop.svg');
+    }
+}
+
+.advice-btn {
+    position: absolute;
+    text-decoration: none;
+    display: inline-block;
+    left: calc(50% - (4rem / 2));
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+    background: var(--accent-clr);
+    border: 0;
+    cursor: pointer;
+}
+
+.advice-btn:active {
+    box-shadow: 0 0 2em var(--accent-clr);
+}
+
+.attribution {
+    position: fixed;
+    bottom: 0;
+    color: white;
+    width: 100%;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

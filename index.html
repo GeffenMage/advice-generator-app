@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.mjs"></script>
+  <title>Frontend Mentor | Advice generator app</title>
+</head>
+
+<body>
+  <main class="card">
+    <div id="loading" data-active="true">
+      <div class="loader"></div>
+    </div>
+    <div class="card-content" id="content">
+      <header class="card-header">
+        <span class="card-title">Advice #<span id="advice-id">123</span></span>
+      </header>
+      <div class="card-body">
+        <q id="advice-text" class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, minus!</q>
+      </div>
+      <footer class="card-footer">
+        <button role="switch" class="advice-btn">
+          <img src="/images/icon-dice.svg" alt="dice">
+        </button>
+      </footer>
+    </div>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+</body>
+
+</html>
