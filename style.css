@@ -124,6 +124,11 @@ body {
     cursor: pointer;
 }
 
+.advice-btn:hover{
+    transform: scale(1.04);
+    box-shadow: 0 0 2em var(--accent-clr);
+}
+
 .advice-btn:active {
     box-shadow: 0 0 2em var(--accent-clr);
 }
